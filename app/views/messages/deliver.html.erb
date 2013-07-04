@@ -1,0 +1,17 @@
+<h1>Send messages</h1>
+<%= flash[:error] %>
+<br />
+<br />
+<%= form_tag '/messages/send_messages', :multipart=>true do %>
+	<label for="to">To</label>
+	<%= file_field_tag "to", :accept => 'text/plain' %>
+	<br />
+	<%= radio_button_tag 'profile', 'Epiq Nation', true %>
+	<%= label_tag('profile', "Epiq Nation") %>
+	<br />
+	<%= radio_button_tag 'profile', 'Moov Select' %>
+	<%= label_tag('profile', "Moov Select") %>
+	
+	<br />
+	<div><%= submit_tag 'Save' %></div>
+<% end %>
